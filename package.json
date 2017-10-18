@@ -1,0 +1,24 @@
+{
+  "name": "watchale",
+  "version": "1.0.0",
+  "description": "An update to the \"Easy Node Authentication:Google\" tutorial on [scotch.io](\"https://scotch.io/tutorials/easy-node-authentication-google\"). Uses the file/app structure most commonly used by Prime students and makes use of the Express Router module for routing.",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^4.12.3",
+    "passport": "^0.3.2",
+    "passport-google": "^0.3.0",
+    "passport-google-oauth": "^1.0.0",
+    "passport-google-oauth2": "^0.1.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
