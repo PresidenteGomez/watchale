@@ -35,7 +35,7 @@ A brief explanation of the project structure and what is super important to know
 ## Server
 Server files and directories
 
-### app.js - The starting point for our app
+### server.js - The starting point for our app
 
 * Creates an Express app for server-side routing.
 * Connects to a Mongo database via mongoose.
