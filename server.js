@@ -1,5 +1,8 @@
 /** ---------- REQUIRE NODE MODULES ---------- **/
 var express = require('express');
+var path = require('path');
+// require('dotenv').config();
+var app = express();
 var bodyParser = require('body-parser');
 var session = require('express-session');
 /** ---------- REQUIRE CUSTOM APP MODULES ---------- **/
@@ -10,9 +13,10 @@ var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
 var database = require('./utils/database');
+// var request = require('request');
 /** ---------- EXPRESS APP CONFIG ---------- **/
-var app = express();
-app.use('/public', express.static('public'));  // serve files from public
+
+app.use(express.static('public')); 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

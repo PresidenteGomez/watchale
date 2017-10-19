@@ -1,8 +1,8 @@
-googleAuthApp.controller('NavController', function (AuthFactory, $window) {
-  var _this = this;
+myApp.controller('NavController', function (AuthFactory, $location) {
+  var vm = this;
   var authFactory = AuthFactory;
-  _this.displayLogout = false; // should we display the logout option on the DOM?
-  _this.message = {
+  vm.displayLogout = false; // should we display the logout option on the DOM?
+  vm.message = {
     text: false,
     type: 'info',
   };
@@ -10,32 +10,32 @@ googleAuthApp.controller('NavController', function (AuthFactory, $window) {
   authFactory.isLoggedIn()
   .then(function (response) {
     if (response.data.status) {
-      _this.displayLogout = true;
+      vm.displayLogout = true;
       authFactory.setLoggedIn(true);
-      _this.username = response.data.name;
+      vm.username = response.data.name;
     } else { // is not logged in on server
-      _this.displayLogout = false;
+      vm.displayLogout = false;
       authFactory.setLoggedIn(false);
     }
   },
 
   function () {
-    _this.message.text = 'Unable to properly authenticate user';
-    _this.message.type = 'error';
+    vm.message.text = 'Unable to properly authenticate user';
+    vm.message.type = 'error';
   });
 
-  _this.logout = function () {
+  vm.logout = function () {
     authFactory.logout()
       .then(function (response) { // success
         authFactory.setLoggedIn(false);
-        _this.username = '';
-        $window.location.href = '/'; // forces a page reload which will update our NavController
+        vm.username = '';
+        $location.href = '/'; // forces a page reload which will update our NavController
       },
 
       function (response) { // error
-        _this.message.text = 'Unable to logout';
-        _this.message.type = 'error';
+        v.message.text = 'Unable to logout';
+        vm.message.type = 'error';
       });
   };
-
+  vm.currentNavItem = $location.path();
 });

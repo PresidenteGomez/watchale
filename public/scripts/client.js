@@ -4,37 +4,30 @@ var myApp = angular.module('myApp', ['ngMaterial', 'ngRoute']);
 /// Routes ///
 // googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 myApp.config(function ($routeProvider, $locationProvider) {
-  $locationProvider.hashPrefix('');
   $routeProvider
     .when('/login', {
       templateUrl: '/public/views/templates/login.html',
-      controller: 'AuthController',
-      controllerAs: 'auth',
+      controller: 'LoginController as lc'
     })
     .when('/register', {
       templateUrl: '/public/views/templates/register.html',
-      controller: 'AuthController',
-      controllerAs: 'auth',
+      controller: 'RegisterController as rc'
     })
     .when('/sightings', {
       templateUrl: '/public/views/templates/allSightings.html',
-      controller: 'CalendarController',
-      controllerAs: 'calendar',
+      controller: 'SightingsController as sc'
     })
     .when('/report', {
-      templateUrl: '/public/views/templates/reportSighting.html',
-      controller: 'AuthController',
-      controllerAs: 'auth',
+      templateUrl: '/public/views/templates/reportSightings.html',
+      controller: 'ReportController as pc'
     })
     .when('/update', {
       templateUrl: '/public/views/templates/updateSightings.html',
-      controller: 'CalendarController',
-      controllerAs: 'calendar',
+      controller: 'UpdateController as uc'
     })
     .when('/approve', {
       templateUrl: '/public/views/templates/approveSightings.html',
-      controller: 'CalendarController',
-      controllerAs: 'calendar',
+      controller: 'ApproveController as ac'
     })
     .otherwise({
       redirectTo: 'login',

@@ -6,66 +6,80 @@
 
   <!-- angular material requires Angular.js Libraries -->
 
-  <script src="/public/vendors/angular.min.js"></script>
-  <script src="/public/vendors/angular-route.min.js"></script>
-  <script src="/public/vendors/angular-animate.min.js"></script>
+  <script src="/vendors/angular.min.js"></script>
+  <script src="/vendors/angular-route.min.js"></script>
+  <script src="/vendors/angular-animate.min.js"></script>
   <script src="vendors/angular-aria.min.js"></script>
   <script src="vendors/angular-messages.min.js"></script>
 
   <!-- client side  -->
 
-  <script src="/public/scripts/client.js"></script>
-  <script src="/public/scripts/services/authFactory.js"></script>
+  <script src="/scripts/client.js"></script>
+  <script src="/scripts/services/authFactory.js"></script>
 
-  <script src="/public/scripts/controllers/navController.js"></script>
-  <script src="/public/scripts/controllers/authController.js"></script>
+  <script src="/scripts/controllers/navController.js"></script>
+  <script src="/scripts/controllers/authController.js"></script>
 
 
 
   <!-- Style Sheets -->
 
-  <link rel="stylesheet" type="text/css" href="/public/vendors/normalize.css" />
-  <link rel="stylesheet" type="text/css" href="/public/vendors/skeleton.css" />
+  <link rel="stylesheet" type="text/css" href="/vendors/normalize.css" />
+  <link rel="stylesheet" type="text/css" href="/vendors/skeleton.css" />
 
   <!-- Angular Material Library -->
 
-  <script src="/public/vendors/angular-material.min.js" charset="utf-8"></script>
+  <script src="/vendors/angular-material.min.js" charset="utf-8"></script>
 
   <!-- Angular Material Style Sheet -->
   <link rel="stylesheet" href="vendors/angular-material.min.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
 
 </head>
 
-<body>
-  <!-- Bring in the Angular app -->
-  <main class="container" ng-app="theGoogles">
-    <!-- NavController is on every page -->
-    <header ng-controller="NavController as nav">
-      <h1>Watchale</h1>
-      <nav>
-        <ul class="row">
-          <li class="two columns">
-            <a href="#Landing">Home</a>
-          </li>
-          <li class="two columns">
-            <a href="#calendar"></a>
-          </li>
-          <li class="six columns" ng-show="nav.displayLogout">Hi {{nav.username}}! |
-            <a href="#" ng-click="nav.logout()">Logout</a>
-          </li>
-        </ul>
-      </nav>
-      <!-- Show a helpful message when needed -->
-      <section id="message" class="nav.message.type" ng-show="nav.message.text">
-        {{nav.message.text}}
-      </section>
-    </header>
-    <!-- Pull in views via ngRoutes here -->
-    <ng-view></ng-view>
+<body ng-app="myApp">
+  <!-- NavController is on every page -->
+  <header>
+    <div ng-controller="NavController as nc" ng-cloak>
+
+      <md-content class="md-padding">
+        <md-nav-bar md-selected-nav-item="nc.currentNavItem" nav-bar-aria-label="navigation links">
+
+          <md-nav-item md-nav-href="#/" name="/">Home</md-nav-item>
+          <md-nav-item md-nav-href="#/login" name="/login">Login</md-nav-item>
+          <md-nav-item md-nav-href="#/register" name="/register">Register</md-nav-item>
+          <md-nav-item md-nav-href="#/allSightings" name="/sightings">Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/reportSightings" name="/report">Report Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/updateSightings" name="/update">Update Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/approveSightings" name="/approve">Approve Sightings</md-nav-item>
+        
+        </md-nav-bar>
+      </md-content>
+
+    
+
+    <h1>Watchale</h1>
+
+        <li class="six columns" ng-show="nav.displayLogout">Hi {{nav.username}}! |
+          <a href="#" ng-click="nav.logout()">Logout</a>
+        </li>
+      </ul>
+    </nav>
+    <!-- Show a helpful message when needed -->
+    <section id="message" class="nav.message.type" ng-show="nav.message.text">
+      {{nav.message.text}}
+    </section>
+    </div>
+  </header>
+  <!-- Pull in views via ngRoutes here -->
+  <main ng-view>
+
   </main>
 </body>
 
 </html>
+
+
+
