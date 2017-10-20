@@ -3,40 +3,25 @@
 
 <head>
   <title>Watchale Solo Project</title>
-
   <!-- angular material requires Angular.js Libraries -->
-
   <script src="/vendors/angular.min.js"></script>
   <script src="/vendors/angular-route.min.js"></script>
   <script src="/vendors/angular-animate.min.js"></script>
   <script src="vendors/angular-aria.min.js"></script>
   <script src="vendors/angular-messages.min.js"></script>
-
   <!-- client side  -->
-
   <script src="/scripts/client.js"></script>
   <script src="/scripts/services/authFactory.js"></script>
-
   <script src="/scripts/controllers/navController.js"></script>
   <script src="/scripts/controllers/authController.js"></script>
-
-
-
   <!-- Style Sheets -->
-
   <link rel="stylesheet" type="text/css" href="/vendors/normalize.css" />
   <link rel="stylesheet" type="text/css" href="/vendors/skeleton.css" />
-
   <!-- Angular Material Library -->
-
   <script src="/vendors/angular-material.min.js" charset="utf-8"></script>
-
   <!-- Angular Material Style Sheet -->
   <link rel="stylesheet" href="vendors/angular-material.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
 </head>
 
 <body ng-app="myApp">
@@ -47,13 +32,13 @@
       <md-content class="md-padding">
         <md-nav-bar md-selected-nav-item="nc.currentNavItem" nav-bar-aria-label="navigation links">
 
-          <md-nav-item md-nav-href="#/" name="/">Home</md-nav-item>
+          <md-nav-item md-nav-href="#/landing" name="/landing">Home</md-nav-item>
           <md-nav-item md-nav-href="#/login" name="/login">Login</md-nav-item>
           <md-nav-item md-nav-href="#/register" name="/register">Register</md-nav-item>
-          <md-nav-item md-nav-href="#/allSightings" name="/sightings">Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/reportSightings" name="/report">Report Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/updateSightings" name="/update">Update Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/approveSightings" name="/approve">Approve Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/sightings" name="/sightings">All Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/report" name="/report">Report Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/update" name="/update">Update Sightings</md-nav-item>
+          <md-nav-item md-nav-href="#/approve" name="/approve">Approve Sightings</md-nav-item>
         
         </md-nav-bar>
       </md-content>

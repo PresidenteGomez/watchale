@@ -5,31 +5,35 @@ var myApp = angular.module('myApp', ['ngMaterial', 'ngRoute']);
 // googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 myApp.config(function ($routeProvider, $locationProvider) {
   $routeProvider
-    .when('/login', {
-      templateUrl: '/public/views/templates/login.html',
+    .when('/', {
+      templateUrl: 'views/landing.html',
+      controller: 'LandingController as dc'
+    })  
+  .when('/login', {
+      templateUrl: 'views/login.html',
       controller: 'LoginController as lc'
     })
     .when('/register', {
-      templateUrl: '/public/views/templates/register.html',
+      templateUrl: 'views/register.html',
       controller: 'RegisterController as rc'
     })
     .when('/sightings', {
-      templateUrl: '/public/views/templates/allSightings.html',
+      templateUrl: 'views/sightings.html',
       controller: 'SightingsController as sc'
     })
     .when('/report', {
-      templateUrl: '/public/views/templates/reportSightings.html',
+      templateUrl: 'views/report.html',
       controller: 'ReportController as pc'
     })
     .when('/update', {
-      templateUrl: '/public/views/templates/updateSightings.html',
+      templateUrl: 'views/update.html',
       controller: 'UpdateController as uc'
     })
     .when('/approve', {
-      templateUrl: '/public/views/templates/approveSightings.html',
+      templateUrl: 'views/approve.html',
       controller: 'ApproveController as ac'
     })
     .otherwise({
-      redirectTo: 'login',
+      redirectTo: '/',
     });
 });
