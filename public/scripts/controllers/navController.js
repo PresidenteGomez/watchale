@@ -1,6 +1,10 @@
-myApp.controller('NavController', function (AuthFactory, $location) {
+myApp.controller('NavController', function (AuthFactory, $location, $window) {
   var vm = this;
   var authFactory = AuthFactory;
+
+  console.log('location path ->', $location.path());
+  vm.currentNavItem = $location.path();
+  
   vm.displayLogout = false; // should we display the logout option on the DOM?
   vm.message = {
     text: false,
@@ -29,7 +33,7 @@ myApp.controller('NavController', function (AuthFactory, $location) {
       .then(function (response) { // success
         authFactory.setLoggedIn(false);
         vm.username = '';
-        $location.href = '#/'; // forces a page reload which will update our NavController
+        $window.location.href = '/'; // forces a page reload which will update our NavController
       },
 
       function (response) { // error
@@ -37,5 +41,5 @@ myApp.controller('NavController', function (AuthFactory, $location) {
         vm.message.type = 'error';
       });
   };
-  //vm.currentNavItem = $location.path();
+ 
 });

@@ -14,6 +14,12 @@
   <script src="/scripts/services/authFactory.js"></script>
   <script src="/scripts/controllers/navController.js"></script>
   <script src="/scripts/controllers/loginController.js"></script>
+  <script src="/scripts/controllers/approveController.js"></script>
+  <script src="/scripts/controllers/landingController.js"></script>
+  <script src="/scripts/controllers/registerController.js"></script>
+  <script src="/scripts/controllers/reportController.js"></script>
+  <script src="/scripts/controllers/sightingsController.js"></script>
+  <script src="/scripts/controllers/updateController.js"></script>
   <!-- Style Sheets -->
   <link rel="stylesheet" type="text/css" href="/vendors/normalize.css" />
   <link rel="stylesheet" type="text/css" href="/vendors/skeleton.css" />
@@ -27,35 +33,9 @@
 <body ng-app="myApp">
   <!-- NavController is on every page -->
   <header>
-    <div ng-controller="NavController as nc" ng-cloak>
 
-      <md-content class="md-padding">
-        <md-nav-bar md-selected-nav-item="nc.currentNavItem" nav-bar-aria-label="navigation links">
-
-          <md-nav-item md-nav-href="#/" name="/landing">Home</md-nav-item>
-          <md-nav-item md-nav-href="#/login" name="/login">Log In</md-nav-item>
-          <md-nav-item md-nav-href="#/register" name="/register">Register</md-nav-item>
-          <md-nav-item md-nav-href="#/sightings" name="/sightings">All Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/report" name="/report">Report Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/update" name="/update">Update Sightings</md-nav-item>
-          <md-nav-item md-nav-href="#/approve" name="/approve">Approve Sightings</md-nav-item>
-        
-        </md-nav-bar>
-      </md-content>
-
-    
-
-    <h1>Watchale</h1>
-
-        <li class="six columns" ng-show="nc.displayLogout">Hi {{nc.username}}! | <a href="#/" ng-click="nc.logout()">Logout</a>
-        </li>
-      </ul>
-    </nav>
-    <!-- Show a helpful message when needed -->
-    <section id="message" class="nc.message.type" ng-show="nc.message.text">
-      {{nc.message.text}}
-    </section>
-    </div>
+<ng-include src ="'views/nav.html'"></ng-include>
+   
   </header>
   <!-- Pull in views via ngRoutes here -->
   <main ng-view>
