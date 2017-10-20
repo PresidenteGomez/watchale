@@ -29,7 +29,7 @@ myApp.controller('NavController', function (AuthFactory, $location) {
       .then(function (response) { // success
         authFactory.setLoggedIn(false);
         vm.username = '';
-        $location.href = '/'; // forces a page reload which will update our NavController
+        $location.href = '#/'; // forces a page reload which will update our NavController
       },
 
       function (response) { // error
@@ -37,5 +37,5 @@ myApp.controller('NavController', function (AuthFactory, $location) {
         vm.message.type = 'error';
       });
   };
-  vm.currentNavItem = $location.path();
+  //vm.currentNavItem = $location.path();
 });

@@ -4,6 +4,7 @@ var myApp = angular.module('myApp', ['ngMaterial', 'ngRoute']);
 /// Routes ///
 // googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 myApp.config(function ($routeProvider, $locationProvider) {
+ 
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
