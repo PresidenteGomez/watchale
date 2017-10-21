@@ -7,10 +7,10 @@
 var mongoose = require('mongoose');
 
 var reportingSchema = mongoose.Schema({
-    whatHappen: String,
+    whatHappened: String,
     date: { type: Date, default: Date.now },
     where: String,
     img: { data: Buffer, contentType: String }
 });
 
-module.exports = mongoose.model('Reporting', reportingSchema);
+module.exports = mongoose.model('reporting', reportingSchema);

@@ -12,7 +12,7 @@ var index = require('./routes/index');
 var auth = require('./routes/auth');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
-var database = require('./utils/database');
+var database = require('./modules/db');
 // var request = require('request');
 /** ---------- EXPRESS APP CONFIG ---------- **/
 
@@ -21,7 +21,8 @@ app.use(express.static('public'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 /** ---------- DATABASE CONNECTION HANDLING ---------- **/
-database();
+//database();
+//db();
 /** ---------- SESSION CREATION AND STORAGE ---------- **/
 /**
  * Creates session that will be stored in memory.

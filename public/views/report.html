@@ -1,6 +1,13 @@
-<h2>Report a Sightings</h2>
-<section>
-    <p>
-        Hello!!!!
-    </p>
-</section>
+<body ng-controller="ReportController as pc" ng-cloak>
+    <h1>Report a Sighting</h1>
+
+    <form ng-submit="rc.submit()">
+        <input type="text" ng-model="pc.report.whatHappened" placeholder="Brief Description of Incident"><br>
+        <input type="data" ng-model="pc.report.date" placeholder="Date of Event"><br>
+        <input type="text" ng-model="pc.report.where" placeholder="Where Did This Take Place? i.e. Corner of Brooklyn Blvd and Chicago"><br>
+        <input type="img" ng-model="pc.report.img" placeholder="img"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+
+</body>

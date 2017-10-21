@@ -1,4 +1,4 @@
-var mongoose = require ('mongose');
+var mongoose = require ('mongoose');
 
 var mongoURI = '';
 // process.env.MONGODB_URI will only be defined if you are running on Heroku
