@@ -1,6 +1,21 @@
-<h2>All Sightings Page</h2>
-<section>
-    <p>
-        Hello!!!!
-    </p>
-</section>
+<div ng-cloak>
+    <md-toolbar class="md-theme-light">
+        <h2 class="md-toolbar-tools">
+            <span>ICE Sightings in the Area</span>
+        </h2>
+    </md-toolbar>
+
+    <md-content>
+        <md-list>
+            <md-list-item class="md-3-line" ng-repeat="info in rc.reposData.data">
+                <div class="md-list-item-text">
+                    <h3>{{info.name}}</h3>
+                    <!-- <p>{{item.notes}}</p> -->
+                </div>
+                <md-button class="md-secondary" href="{{info.html_url}}">Go</md-button>
+                <md-divider ng-if="!$last"></md-divider>
+            </md-list-item>
+        </md-list>
+    </md-content>
+
+</div>
