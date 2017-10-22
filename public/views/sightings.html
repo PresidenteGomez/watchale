@@ -3,6 +3,10 @@
         <h2 class="md-toolbar-tools">
             <span>ICE Sightings in the Area</span>
         </h2>
+        <div  ng-controller="NavController as nav" ng-show="nav.displayLogout">Hi {{nav.username}}! |
+            <a href="#" ng-click="nav.logout()">Logout</a>
+        
+        </div>
     </md-toolbar>
 
     <md-content>
@@ -17,5 +21,9 @@
             </md-list-item>
         </md-list>
     </md-content>
+
+
+
+
 
 </div>

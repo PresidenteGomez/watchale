@@ -34,6 +34,10 @@ myApp.config(function ($routeProvider) {
       templateUrl: 'views/approve.html',
       controller: 'ApproveController as ac'
     })
+    .when('/nav', {
+      templateUrl: 'views/nav.html',
+      controller: 'NavController as nc'
+    })
     .otherwise({
       redirectTo: '/',
     });

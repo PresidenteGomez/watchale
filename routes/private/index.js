@@ -14,7 +14,7 @@ var router  = express.Router();
  * GET private/index
  */
 router.get('/', function (req, res) {
-  res.redirect('/'); // they made it!
+  res.redirect('/#!/sightings'); // they made it!
 });
 
 module.exports = router;

@@ -18,7 +18,7 @@ mongoose.connection.on('error', function (err) {
 });
 
 mongoose.connection.once('open', function () {
-    console.log('Conencted to Mongo!');
+    console.log('Connected to Mongo!');
 })
 
 module.exports = mongoDB;
