@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-// var bodyParser = require('body-parser');
+var bodyParser = require('body-parser');
 // var mongoose = require('mongoose');
 var Reporting = require('../models/reporting');
 
@@ -10,7 +10,7 @@ var Reporting = require('../models/reporting');
 // mongoose.connect('localhost:27017/watchale');
 
 //GET function
-router.get('/', (req, res) => {
+router.get('/', function (req, res) {
     Reporting.find({}, function (err, response) {
         if (err) {
             console.log('error reporting sights from db:', err);
@@ -21,9 +21,8 @@ router.get('/', (req, res) => {
             res.send(response);
         } //!err
     }); //end find
-
-
 });
+
 //POST function
 router.post('/', function (req, res) {
     console.log('inside /reportSight post', req.body);
@@ -41,19 +40,6 @@ router.post('/', function (req, res) {
         }
     });
 });
-//POST function
-// router.post('/', (req, res) => {
-//     const sighting = { description: req.body.description, date: req.body.date, time: req.body.time, location: req.body.location, image: req.body.image };
-//     mongoDB.collection('reporting').insert(sighting, (err, result) => {
-//         if (err) {
-//             res.send({ 'error': 'An error has occureed' });
-//         } else {
-//             console.log('/reportSight post route hit');
-//             res.send(result);
-
-//         }
-//     })
-// })
 
 //export router 
 module.exports = router;

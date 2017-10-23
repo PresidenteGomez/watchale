@@ -1,6 +1,11 @@
-myApp.controller('SightingsController', function ($location) {
+myApp.controller('SightingsController', function (AppService) {
+    console.log('SightingsController Loaded!');
 
     var vm = this;
 
-    //vm.currentNavItem = $location.path();
+    AppService.getSights();
+    vm.sightInfo = AppService.sightingsObject.data;
+
+    console.log('SightingsController ->' , vm.sightInfo);
+
 });

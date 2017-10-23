@@ -9,18 +9,26 @@
         </div>
     </md-toolbar>
 
-    <md-content>
+    <md-content ng-controller="SightingsController as sc">
         <md-list>
-            <md-list-item class="md-3-line" ng-repeat="info in rc.reposData.data">
+            <md-list-item class="md-3-line" ng-repeat="reportData in sc.sightInfo">
                 <div class="md-list-item-text">
-                    <h3>{{info.name}}</h3>
-                    <!-- <p>{{item.notes}}</p> -->
+                    <h5>{{reportData.description}}</h5>
+
+                    <p>{{reportData.date}}</p>
+
+                    <p>{{reportData.time}}</p>   
+
+                    <p>{{reportData.location}}</p>
+
+                    <p>{{reportData.image}}</p>
                 </div>
-                <md-button class="md-secondary" href="{{info.html_url}}">Go</md-button>
+                <!-- <md-button class="md-secondary" href="{{info.html_url}}">Go</md-button> -->
                 <md-divider ng-if="!$last"></md-divider>
             </md-list-item>
         </md-list>
     </md-content>
+
 
 
 

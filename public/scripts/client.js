@@ -36,7 +36,7 @@ myApp.config(function ($routeProvider) {
     })
     .when('/nav', {
       templateUrl: 'views/nav.html',
-      controller: 'NavController as nc'
+      controller: 'NavController as nav'
     })
     .otherwise({
       redirectTo: '/',

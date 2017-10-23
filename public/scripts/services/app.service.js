@@ -15,7 +15,7 @@ myApp.service('AppService', function ($http) {
         }).then(function (response) {
             console.log('in service, back with member submitted reports', response);
             sv.getSights();
-            console.log('ICE sightings: ', sv.getsights);
+            console.log('ICE sightings: ', sv.postReport);
 
         }); //end $http post
     
@@ -30,58 +30,3 @@ myApp.service('AppService', function ($http) {
     }//end getSights
 
 }); //end myApp.service
-
-// module.exports = AppService;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//---------BEFORE CHANGE-----------------^^^^^
-// .then(function (response) {
-//     console.log('in service, back with member submitted reports', response);
-//     sv.sights = response.data;
-//     console.log('ICE sightings: ', sv.sight);
-
-
-
-
-
-// var User = require('../models/reporting');
-
-// var AppService = {
-//     createNewReporting: function (description, date, time, location, image) {
-//         var reporting = new Reporting();
-
-//         reporting.description = description;
-//         reporting.date = date;
-//         reporting.time = time;
-//         reporting.location = location;
-//         reporting.image = image;
-
-//         reporting.save(function (err) {
-//             if (err) {
-//                 return callback(err, null);
-//             }
-//             return callback(null, reporting);
-//         });
-//     }
-
-// }
