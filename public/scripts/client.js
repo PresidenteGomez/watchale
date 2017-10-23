@@ -4,7 +4,7 @@ var myApp = angular.module('myApp', ['ngMaterial', 'ngRoute']);
 /// Routes ///
 // googleAuthApp.config(['$routeProvider', function ($routeProvider) {
 myApp.config(function ($routeProvider) {
- 
+ //NEED TO FIND A FUNCTION THAT ONLY ALLOWS YOU TO SEE PAGES IF YOU'RE LOGGED-IN
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',

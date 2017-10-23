@@ -3,14 +3,18 @@
  *
  * @module models/reporting
  */
-
 var mongoose = require('mongoose');
-
-var reportingSchema = mongoose.Schema({
-    whatHappened: String,
-    date: { type: Date, default: Date.now },
-    where: String,
-    img: { data: Buffer, contentType: String }
+var Schema = mongoose.Schema;
+var Reporting = require('../models/reporting');
+    
+var reportingSchema = new Schema({
+    description: String,
+    date: String,
+    time: String,
+    location: String,
+    image: String //need to update this into accepting images
 });
 
-module.exports = mongoose.model('reporting', reportingSchema);
+var Reporting = mongoose.model('reporting', reportingSchema);
+
+module.exports = Reporting;

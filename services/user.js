@@ -43,7 +43,6 @@ var UserService = {
       if (err) {
         return callback(err, null);
       }
-
       return callback(null, user);
     });
   },
