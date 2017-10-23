@@ -1,4 +1,4 @@
-myApp.controller('ReportController', function (AppService) { 
+myApp.controller('ReportController', function (AppService) {
 
     console.log('in ReportController');
     var vm = this;
@@ -14,23 +14,40 @@ myApp.controller('ReportController', function (AppService) {
             location: vm.location,
             image: vm.image
         }
-  
+        swal({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, submit sighting!',
+            cancelButtonText: 'No, cancel!',
+            confirmButtonClass: 'btn btn-success',
+            cancelButtonClass: 'btn btn-danger',
+            buttonsStyling: false
+        }).then(function () {
+            swal(
+                'Submitted!',
+                'Your sighting has been submitted.',
+                'success'
+            )
+        }, function (dismiss) {
+            // dismiss can be 'cancel', 'overlay',
+            // 'close', and 'timer'
+            if (dismiss === 'cancel') {
+                swal(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                )
+            }
+        });
         console.log('addReport object from DOM ->', addSightingsObject);
         //this will add data to watchale database using the AppService
         AppService.postReport(addSightingsObject);
-    }
+    };
+
     AppService.getSights();
 });
-
-
-//before 
-// vm.addReport = function () {
-
-//     AppService.postReport();
-//     vm.reports = AppService.sights;
-//     console.log('in reportController with: ', vm.sales);
-// }
-// vm.reportList();
-
-// console.log('AppService.forsale');
 
