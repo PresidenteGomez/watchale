@@ -24,26 +24,39 @@ router.get('/', (req, res) => {
 
 
 });
-
 //POST function
-router.post('/', (req, res) => {
-    const sighting = { description: req.body.description, date: req.body.date, time: req.body.time, location: req.body.location, image: req.body.image };
-    db.collection('reporting').insert(sighting, (err, result) => {
-        if (err) {
-            res.send({ 'error': 'An error has occureed' });
-        } else {
-            console.log('/reportSight post route hit');
-            res.send(result);
+router.post('/', function (req, res) {
+    console.log('inside /reportSight post', req.body);
 
+    var newSighting = new Reporting(req.body);
+
+    newSighting.save(function (err) {
+        console.log('here');
+        if (err) {
+            console.log(err);
+            res.sendStatus(500);
+        } else {
+            console.log('successful Sighting Report created');
+            res.sendStatus(201);
         }
-    })
-})
+    });
+});
+//POST function
+// router.post('/', (req, res) => {
+//     const sighting = { description: req.body.description, date: req.body.date, time: req.body.time, location: req.body.location, image: req.body.image };
+//     mongoDB.collection('reporting').insert(sighting, (err, result) => {
+//         if (err) {
+//             res.send({ 'error': 'An error has occureed' });
+//         } else {
+//             console.log('/reportSight post route hit');
+//             res.send(result);
+
+//         }
+//     })
+// })
 
 //export router 
 module.exports = router;
-
-
-
 
 
 

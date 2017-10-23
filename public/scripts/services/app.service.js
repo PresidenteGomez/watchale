@@ -8,7 +8,7 @@ myApp.service('AppService', function ($http) {
 //function to add a sighting to the database
     sv.postReport = function (sightingsObject) {
         console.log('in postReport');
-        $htpp({
+        $http({
             method: 'POST',
             url: '/reportSight',
             data: sightingsObject
