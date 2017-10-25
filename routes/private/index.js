@@ -6,9 +6,11 @@
 var express = require('express');
 var router  = express.Router();
 var reportSight = require('./reportSight');
+var adminRoute = require('./adminRoute');
 
 /** ---------- SUBROUTES ---------- **/
 router.use('/reportSight', reportSight);
+router.use('/adminRoute', adminRoute);
 
 /**
  * GET private/index

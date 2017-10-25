@@ -2,7 +2,7 @@ myApp.service('AppService', function ($http) {
     var sv = this;
 
     sv.sightingsObject = {data: []};
-
+    sv.adminObject = {admin: false};
     console.log('in AppService');
 
 //function to add a sighting to the database
@@ -28,5 +28,14 @@ myApp.service('AppService', function ($http) {
             console.log('in get:', sv.sightingsObject.data);
         }); //end $http get
     }//end getSights
+
+    sv.getAdmin = function () {
+        $http.get('/private/adminRoute').then(function (response) {
+            sv.adminObject.admin = response.data;
+            console.log('in getAdmin:', sv.adminObject.data);
+        })
+    }
+
+
 
 }); //end myApp.service
