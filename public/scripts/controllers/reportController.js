@@ -50,4 +50,3 @@ myApp.controller('ReportController', function (AppService) {
 
     AppService.getSights();
 });
-

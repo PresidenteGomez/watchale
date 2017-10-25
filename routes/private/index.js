@@ -5,10 +5,10 @@
  */
 var express = require('express');
 var router  = express.Router();
-// var calendar = require('./calendar');
+//var reportSight = require('./reportSight');
 
 /** ---------- SUBROUTES ---------- **/
-// router.use('/calendar', calendar);
+//router.use('/reportSight', reportSight);
 
 /**
  * GET private/index

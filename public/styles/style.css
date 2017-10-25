@@ -1,12 +1,16 @@
-/* .md-6-mujeres-revolucionares{
-    width: 700px;
-    height: auto;
-} */
 
 .blah{
     text-align: center;
 }
 
-/* .md-padding{
-    padding: 
-} */
+.youtube {
+    position: absolute;
+    top: 200px;
+    left: 16px;
+}
+
+.adminLogin{
+ position: fixed;
+    top: 200px;
+    top-right: 16px;
+}

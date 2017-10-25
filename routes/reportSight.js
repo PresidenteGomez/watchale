@@ -26,9 +26,10 @@ router.get('/', function (req, res) {
 //POST function
 router.post('/', function (req, res) {
     console.log('inside /reportSight post', req.body);
-
-    var newSighting = new Reporting(req.body);
-
+    var userConnect = req.body;
+    userConnect.addedBy = req.user.googleName;
+    var newSighting = new Reporting(userConnect);
+    
     newSighting.save(function (err) {
         console.log('here');
         if (err) {

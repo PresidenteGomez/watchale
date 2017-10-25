@@ -12,7 +12,8 @@ var reportingSchema = new Schema({
     date: String,
     time: String,
     location: String,
-    image: String //need to update this into accepting images
+    image: String, //need to update this into accepting images
+    addedBy: String
 });
 
 var Reporting = mongoose.model('reporting', reportingSchema);
