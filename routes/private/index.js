@@ -5,10 +5,10 @@
  */
 var express = require('express');
 var router  = express.Router();
-//var reportSight = require('./reportSight');
+var reportSight = require('./reportSight');
 
 /** ---------- SUBROUTES ---------- **/
-//router.use('/reportSight', reportSight);
+router.use('/reportSight', reportSight);
 
 /**
  * GET private/index

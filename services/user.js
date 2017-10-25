@@ -43,6 +43,7 @@ var UserService = {
       if (err) {
         return callback(err, null);
       }
+      //post request admin 'nestor gomez jimenez' === true
       return callback(null, user);
     });
   },

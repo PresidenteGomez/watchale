@@ -10,7 +10,7 @@ myApp.service('AppService', function ($http) {
         console.log('in postReport');
         $http({
             method: 'POST',
-            url: '/reportSight',
+            url: '/private/reportSight',
             data: sightingsObject
         }).then(function (response) {
             console.log('in service, back with member submitted reports', response);
@@ -23,7 +23,7 @@ myApp.service('AppService', function ($http) {
 
     //function to GET sightings data from database
     sv.getSights = function () {
-        $http.get('/reportSight').then(function (response) { //might need to use '/sighting'...lets see where this goes!
+        $http.get('/private/reportSight').then(function (response) { //might need to use '/sighting'...lets see where this goes!
             sv.sightingsObject.data = response.data;
             console.log('in get:', sv.sightingsObject.data);
         }); //end $http get

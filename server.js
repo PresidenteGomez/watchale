@@ -9,7 +9,7 @@ var passport = require('./auth/passport');
 var configs = require('./config/auth');
 var auth = require('./routes/auth');
 var index = require('./routes/index');
-var reportSight = require('./routes/reportSight');
+//var reportSight = require('./routes/reportSight');
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
 var database = require('./modules/db');
@@ -49,7 +49,7 @@ app.use(passport.session());
 app.use('/private', isLoggedIn, private);
 app.use('/auth', auth);
 app.use('/', index);
-app.use('/reportSight', reportSight);
+//app.use('/reportSight', reportSight);
 
 // API Key & username are environment variables in Heroku
 var username = process.env.USER_NAME;

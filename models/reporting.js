@@ -11,7 +11,7 @@ var reportingSchema = new Schema({
     description: String,
     date: String,
     time: String,
-    location: String,
+    location: Number,
     image: String, //need to update this into accepting images
     addedBy: String
 });

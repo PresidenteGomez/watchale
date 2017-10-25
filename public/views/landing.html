@@ -1,7 +1,13 @@
-<!-- <h1>Watchale</h1> -->
+<h1>Watchale</h1>
 <!-- 
 <md-button href="#!/register" name="md-Register">Become a Member</md-button> -->
-
+<div layout="row" layout-align="space-between center" flex>
+<md-button class="md-fab md-background" aria-label="More" ng-click="ctrl.showMenu($event, ctrl.more)">
+    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+</md-button>
+</div>
+<md-button class="memberLogin" href="#!/login" name="md-Login">Member Login</md-button>
+<md-button class="adminLogin" href="#!/login" name="md-Login">Admin Login</md-button>
 <div id="background">
     <!-- <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
         <div flex-xs flex-gt-xs="40" layout="column" layout-align="center center">
@@ -19,8 +25,18 @@
             </md-grid-tile>
     </md-content> -->
 
-    <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/0lNJviuYUEQ?ecver=1" frameborder="0"
-        allowfullscreen></iframe>
-    <md-button class="memberLogin" href="#!/login" name="md-Login">Member Login</md-button>
-    <md-button class="adminLogin" href="#!/login" name="md-Login">Admin Login</md-button>
+    <div>
+        <h3>
+            One of the biggest problems in Minneapolis and around the Country is the lack of a centralized system to protect our immigrant
+            communities from being separated and deported from their families. Immigration and Customs Enforcement (ICE)
+            agents lurk in our local communities and dismantle families from each other. These “ICE raids” are incredibly
+            disruptive to communities. The application’s goal is to encourage neighbors to report ICE sightings, so families
+            have the opportunity to stay together. Keeping our communities safe is the most important goal of this application.
+        </h3>
+
     </div>
+    <div>
+        <iframe layout="row" layout-align="space-between center" flex class="youtube" width="560" height="315" src="https://www.youtube.com/embed/0lNJviuYUEQ?ecver=1" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+</div>

@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 // var mongoose = require('mongoose');
-var Reporting = require('../models/reporting');
+var Reporting = require('../../models/reporting');
 
 //var ObjectID =require('mongod').ObjectID;//is this neccessary...if app works, then no.
 
