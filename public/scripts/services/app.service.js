@@ -38,6 +38,4 @@ myApp.service('AppService', function ($http) {
         })
     }
 
-
-
 }); //end myApp.service
