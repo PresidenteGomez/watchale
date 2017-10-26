@@ -29,10 +29,12 @@ myApp.service('AppService', function ($http) {
         }); //end $http get
     }//end getSights
 
+    //retrieving if User is an admin from adminRoute
     sv.getAdmin = function () {
         $http.get('/private/adminRoute').then(function (response) {
-            sv.adminObject.admin = response.data;
-            console.log('in getAdmin:', sv.adminObject.data);
+            sv.adminObject.admin = response.data[0].admin;
+            console.log(response.data[0].admin);
+
         })
     }
 

@@ -14,10 +14,6 @@ myApp.config(function ($routeProvider) {
       templateUrl: 'views/login.html',
       controller: 'LoginController as lc'
     })
-    // .when('/register', {
-    //   templateUrl: 'views/register.html',
-    //   controller: 'RegisterController as rc'
-    // })
     .when('/sightings', {
       templateUrl: 'views/sightings.html',
       controller: 'SightingsController as sc'
@@ -29,10 +25,6 @@ myApp.config(function ($routeProvider) {
     .when('/update', {
       templateUrl: 'views/update.html',
       controller: 'UpdateController as uc'
-    })
-    .when('/approve', {
-      templateUrl: 'views/approve.html',
-      controller: 'ApproveController as ac'
     })
     .when('/nav', {
       templateUrl: 'views/nav.html',

@@ -1,11 +1,13 @@
-myApp.controller('NavController', function (AuthFactory, $location, $window) {
+myApp.controller('NavController', function (AuthFactory, $location, $window, AppService) {
   var vm = this;
   var authFactory = AuthFactory;
-
+// vm.loggedIn = authFactory.checkLoggedIn();
   console.log('location path ->', $location.path());
   vm.currentNavItem = $location.path();
   
-  vm.displayLogout = false; // should we display the logout option on the DOM?
+  vm.adminObject = AppService.adminObject;
+
+  vm.displayLogout = false;
   vm.message = {
     text: false,
     type: 'info',
@@ -17,6 +19,9 @@ myApp.controller('NavController', function (AuthFactory, $location, $window) {
       vm.displayLogout = true;
       authFactory.setLoggedIn(true);
       vm.username = response.data.name;
+
+      //we call into the AppService and grab the getAdmin GET route to verify if the user that logged in is an admin.
+      AppService.getAdmin();
     } else { // is not logged in on server
       vm.displayLogout = false;
       authFactory.setLoggedIn(false);

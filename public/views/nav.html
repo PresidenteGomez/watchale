@@ -1,18 +1,18 @@
-<div ng-controller="NavController as nav" ng-cloak >
+<div ng-controller="NavController as nav" ng-cloak>
 
-    <md-content class="md-padding">
+    <md-content>
         <md-nav-bar md-selected-nav-item="nav.currentNavItem" nav-bar-aria-label="navigation links">
 
             <md-nav-item md-nav-href="#!/" name="/">Home</md-nav-item>
-            <!-- <md-nav-item md-nav-href="#!/login" name="/login">Log In</md-nav-item>
-            <md-nav-item md-nav-href="#!/register" name="/register">Register</md-nav-item> -->
+
             <md-nav-item md-nav-href="#!/sightings" name="/sightings">All Sightings</md-nav-item>
             <md-nav-item md-nav-href="#!/report" name="/report">Report Sightings</md-nav-item>
-            <!-- <md-nav-item md-nav-href="#!/update" name="/update">Update Sightings</md-nav-item>
-            <md-nav-item md-nav-href="#!/approve" name="/approve">Approve Sightings</md-nav-item> -->
-        <div ng-controller="NavController as nav" ng-show="nav.displayLogout">Hi {{nav.username}}! |
-            <a href="#" ng-click="nav.logout()">Logout</a>
-        </div>
+            <!-- will only show if the logged user is an admin -->
+            <md-nav-item ng-hide="!nav.adminObject.admin" md-nav-href="#!/update" name="/update">Update/Delete Sightings</md-nav-item>
+
+            <div class="logout" ng-show="nav.displayLogout">Hi {{nav.username}}! |
+                <a href="#" ng-click="nav.logout()">Logout</a>
+            </div>
         </md-nav-bar>
     </md-content>
 </div>
