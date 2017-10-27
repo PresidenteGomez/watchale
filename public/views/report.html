@@ -1,4 +1,12 @@
 <div ng-controller="ReportController as pc" layout="column" ng-cloak class="md-inline-form">
+    <div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
+        ng-controller="LandingController as dc">
+        <div ng-show="nav.displayLogout">
+            <md-button class="md-accent" href="#" name="md-signout" ng-click="nav.logout()">
+                <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi {{nav.username}}! | Sign Out
+            </md-button>
+        </div>
+    </div>
     <h1 class="lead">Report a Sighting </h1>
     <md-content layout-gt-sm="row" layout-padding>
     </md-content>

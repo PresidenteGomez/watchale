@@ -1,10 +1,17 @@
 <div class="ng-scope layout-row" layout="row" layout-align="end start" ng-controller="NavController as nav" ng-controller="LandingController as dc">
-    <div ng-hide="nav.displayLogout"  >
+    <div ng-hide="nav.displayLogout">
         <md-button class="md-accent" class="signIn" href="#!/login" name="md-Login">
             <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Sign In</md-button>
     </div>
 </div>
-
+<div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
+    ng-controller="LandingController as dc">
+    <div ng-show="nav.displayLogout">
+        <md-button class="md-accent" href="#" name="md-signout" ng-click="nav.logout()">
+            <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi {{nav.username}}! | Sign Out
+        </md-button>
+    </div>
+</div>
 <div class="ng-scope layout-column">
 
     <div class="flex-33-">
