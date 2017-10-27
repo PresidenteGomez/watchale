@@ -2,12 +2,12 @@
   ng-controller="LandingController as dc">
   <div ng-show="nav.displayLogout">
     <md-button class="md-accent" href="#" name="md-signout" ng-click="nav.logout()">
-      <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi {{nav.username}}! | Sign Out
+      <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi, {{nav.username}}! | Sign Out
     </md-button>
   </div>
 </div>
 <h2>Update Sightings</h2>
-<div ng-controller="SightingController as sc" class="md-accent" md-whiteframe="3" ng-cloak ng-repeat="reportData in sc.sightInfo" layout-wrap>
+<div  ng-controller="UpdateController as uc" class="md-accent" ng-cloak ng-repeat="reportData in uc.sightInfo" layout-wrap>
   <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
     <div flex-xs flex-gt-xs="50" layout="column">
       <md-card>
