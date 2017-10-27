@@ -1,11 +1,9 @@
-<div ng-cloak>
+<!-- <div ng-cloak>
     <md-toolbar class="md-theme-light">
         <h2 class="md-toolbar-tools">
             <span>ICE Sightings in the Area</span>
         </h2>
-        <!-- <div  ng-controller="NavController as nav" ng-show="nav.displayLogout">Hi {{nav.username}}! |
-            <a href="#" ng-click="nav.logout()">Logout</a>
-        </div> -->
+
     </md-toolbar>
 
     <md-content ng-controller="SightingsController as sc">
@@ -16,21 +14,77 @@
 
                     <p>{{reportData.date}}</p>
 
-                    <p>{{reportData.time}}</p>   
+                    <p>{{reportData.time}}</p>
 
                     <p>{{reportData.location}}</p>
 
                     <p>{{reportData.image}}</p>
                 </div>
-                <!-- <md-button class="md-secondary" href="{{info.html_url}}">Go</md-button> -->
+
                 <md-divider ng-if="!$last"></md-divider>
             </md-list-item>
         </md-list>
     </md-content>
-
-
-
-
-
-
 </div>
+
+
+<div md-whiteframe="3" layout="row" layout-padding layout-wrap layout-margin ng-cloak layout-align="space-around" ng-repeat="reportData in sc.sightInfo">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar></div>
+            <mat-card-title>ICE Sighting</mat-card-title>
+
+        </mat-card-header>
+        <img mat-card-image src="/assets/pics/" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <h5>{{reportData.description}}</h5>
+
+            <p>{{reportData.date}}</p>
+
+            <p>{{reportData.time}}</p>
+
+            <p>{{reportData.location}}</p>
+
+            <p>{{reportData.image}}</p>
+        </mat-card-content>
+        <mat-card-actions>
+            <md-button mat-button>LIKE</md-button>
+            <md-button mat-button>SHARE</md-button>
+        </mat-card-actions>
+    </mat-card>
+
+</div> -->
+
+<div class="md-accent" md-whiteframe="3" ng-cloak ng-repeat="reportData in sc.sightInfo" layout-wrap>
+    <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+        <div flex-xs flex-gt-xs="50" layout="column" >
+            <md-card>
+                <img ng-src="/assets/pics/ice-raid.png" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Sighting Description</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content class="md-accent">
+                    <h5 class="md-accent">
+                        <md-icon md-svg-src="assets/pics/ic_message_48px.svg"></md-icon> {{reportData.description}}</h5>
+
+                    <p class="md-accent">
+                        <md-icon md-svg-src="assets/pics/ic_date_range_48px.svg"></md-icon> Date: {{reportData.date}}</p>
+
+                    <p>
+                        <md-icon md-svg-src="assets/pics/ic_access_time_48px.svg"></md-icon> Time: {{reportData.time}}</p>
+
+                    <p>
+                        <md-icon md-svg-src="assets/pics/noun_63811_cc.svg"></md-icon> Zipcode: {{reportData.location}}</p>
+
+                    <p>{{reportData.image}}</p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                </md-card-actions>
+            </md-card>
+        </div>
+</div>
+        <!-- <div  ng-controller="NavController as nav" ng-show="nav.displayLogout">Hi {{nav.username}}! |
+                                <a href="#" ng-click="nav.logout()">Logout</a>
+                            </div> -->

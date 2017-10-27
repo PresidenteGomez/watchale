@@ -20,6 +20,7 @@ router.get('/', function (req, res) {
     }); //end find
 });
 
+
 //this route is to eventually "update" a sighting to either display "verified" in the "All Sightings" page.----NEEDS MongoDB query that could be: db.reportings.update({_id: 'ObjectId("59f10de59b8eeb2a000b9dce")'},{confirmed: true}); 
 router.put('/', function (req, res) {
     Reporting.update({}, function (err, response) {

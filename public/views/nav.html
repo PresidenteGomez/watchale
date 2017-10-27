@@ -6,10 +6,10 @@
             <md-nav-item md-nav-href="#!/" name="/">
                 <md-icon md-svg-src="assets/pics/ic_home_48px.svg"></md-icon> Home</md-nav-item>
 
-            <md-nav-item ng-hide="!nav.adminObject" md-nav-href="#!/sightings" name="/sightings">
+            <md-nav-item class="md-icon-button" aria-label="Sightings" ng-hide="!nav.adminObject" md-nav-href="#!/sightings" name="/sightings">
                 <md-icon md-svg-src="assets/pics/ic_whatshot_48px.svg"></md-icon> Sightings</md-nav-item>
-            <md-nav-item ng-hide="!nav.adminObject.admin" md-nav-href="#!/report" name="/report">
-                <md-icon md-svg-src="assets/pics/ic_warning_48px.svg"></md-icon> Report Sightings</md-nav-item>
+            <md-nav-item ng-hide="!nav.userObject" md-nav-href="#!/report" name="/report">
+                <md-icon md-svg-src="assets/pics/ic_warning_48px.svg"></md-icon> Report Sighting</md-nav-item>
 
             <!-- will only show if the logged user is an admin -->
             <md-nav-item ng-hide="!nav.adminObject.admin" md-nav-href="#!/update" name="/update">

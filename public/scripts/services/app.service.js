@@ -1,11 +1,12 @@
 myApp.service('AppService', function ($http) {
     var sv = this;
 
-    sv.sightingsObject = {data: []};
-    sv.adminObject = {admin: false};
+    sv.sightingsObject = { data: [] };
+    sv.adminObject = { admin: false };
+    sv.userObject = [];
     console.log('in AppService');
 
-//function to add a sighting to the database
+    //function to add a sighting to the database
     sv.postReport = function (sightingsObject) {
         console.log('in postReport');
         $http({
@@ -18,7 +19,7 @@ myApp.service('AppService', function ($http) {
             console.log('ICE sightings: ', sv.postReport);
 
         }); //end $http post
-    
+
     } //end postReport
 
     //function to GET sightings data from database
@@ -33,9 +34,16 @@ myApp.service('AppService', function ($http) {
     sv.getAdmin = function () {
         $http.get('/private/adminRoute').then(function (response) {
             sv.adminObject.admin = response.data[0].admin;
-            console.log(response.data[0].admin);
+                console.log(response.data[0].admin);
 
         })
     }
+    sv.getUser = function () {
+        $http.get('/private/regUserRoute').then(function (response) {
+            sv.userObject = response.data;
+            
+            console.log(response.data.user);
 
+        })
+    }
 }); //end myApp.service

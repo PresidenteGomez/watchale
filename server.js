@@ -9,7 +9,7 @@ var passport = require('./auth/passport');
 var configs = require('./config/auth');
 var auth = require('./routes/auth');
 var index = require('./routes/index');
-//var reportSight = require('./routes/reportSight');
+
 var isLoggedIn = require('./utils/auth');
 var private = require('./routes/private/index');
 var database = require('./modules/db');

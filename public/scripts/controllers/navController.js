@@ -6,6 +6,7 @@ myApp.controller('NavController', function (AuthFactory, $location, $window, App
   vm.currentNavItem = $location.path();
   
   vm.adminObject = AppService.adminObject;
+  vm.userObject = AppService.userObject;
 
   vm.displayLogout = false;
   vm.message = {
@@ -22,6 +23,8 @@ myApp.controller('NavController', function (AuthFactory, $location, $window, App
 
       //we call into the AppService and grab the getAdmin GET route to verify if the user that logged in is an admin.
       AppService.getAdmin();
+      AppService.getUser();
+    
     } else { // is not logged in on server
       vm.displayLogout = false;
       authFactory.setLoggedIn(false);
@@ -32,6 +35,7 @@ myApp.controller('NavController', function (AuthFactory, $location, $window, App
     vm.message.text = 'Unable to properly authenticate user';
     vm.message.type = 'error';
   });
+
 
   vm.logout = function () {
     authFactory.logout()
