@@ -1,6 +1,8 @@
-myApp.controller('UpdateController', function ($location) {
+myApp.controller('UpdateController', function (AppService) {
 
     var vm = this;
-
-    vm.currentNavItem = $location.path();
+    
+    AppService.getSights();
+    vm.sightInfo = AppService.sightingsObject.data;
+ 
 });

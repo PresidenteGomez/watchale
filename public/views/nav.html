@@ -6,15 +6,17 @@
             <md-nav-item md-nav-href="#!/" name="/">
                 <md-icon md-svg-src="assets/pics/ic_home_48px.svg"></md-icon> Home</md-nav-item>
 
-            <md-nav-item class="md-icon-button" aria-label="Sightings" ng-hide="!nav.adminObject" md-nav-href="#!/sightings" name="/sightings">
-                <md-icon md-svg-src="assets/pics/ic_whatshot_48px.svg"></md-icon> Sightings</md-nav-item>
-            <md-nav-item ng-hide="!nav.userObject" md-nav-href="#!/report" name="/report">
+            <md-nav-item class="md-icon-button" aria-label="Sightings" ng-hide="!nav.displayLogout" md-nav-href="#!/sightings" name="/sightings">
+                <md-icon md-svg-src="assets/pics/ic_whatshot_48px.svg"></md-icon><br> Sightings</md-nav-item>
+            <md-nav-item ng-hide="!nav.displayLogout" md-nav-href="#!/report" name="/report">
                 <md-icon md-svg-src="assets/pics/ic_warning_48px.svg"></md-icon> Report Sighting</md-nav-item>
 
             <!-- will only show if the logged user is an admin -->
             <md-nav-item ng-hide="!nav.adminObject.admin" md-nav-href="#!/update" name="/update">
                 <md-icon md-svg-src="assets/pics/ic_system_update_alt_48px.svg"></md-icon> Update/Delete Sightings</md-nav-item>
-
+            <!-- <md-nav-item ng-hide="!nav.adminObject.admin" md-nav-href="#!/update" name="/update">
+                <md-icon md-svg-src="assets/pics/ic_message_48px.svg"></md-icon></md-icon> Update/Delete Sightings</md-nav-item> -->
+            
             <div class="logout" ng-show="nav.displayLogout">Hi {{nav.username}}! |
                 <a href="#" ng-click="nav.logout()">Logout</a>
             </div>
