@@ -1,4 +1,53 @@
 
-.blah{
+.reportSight{
     text-align: center;
+    font-size: 100px;
+     color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122);
+    
+}
+mark{
+    background-color: rgba(0, 0, 0, 0.815);
+    color: rgb(255, 255, 255);
+}
+.watchaleTitle{
+    text-align: center;
+    font-size: 250px;
+    color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:2px 3px rgb(236, 64, 122);
+}
+.santaCecilia{
+    text-align: center;
+    font-size: 75px;
+    color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122);
+    
+}
+.updateViewTitle{
+    text-align: center;
+    font-size: 100px;
+     color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122);
+    
+}
+
+.signInView{
+    text-align: center;
+    font-size: 100px;
+     color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122);
+    
+}
+.sightingsViewTitle{
+    text-align: center;
+    font-size: 90px;
+     color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122);
+    
 }

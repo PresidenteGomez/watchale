@@ -1,3 +1,7 @@
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:500');
+</style>
+
 <div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
   ng-controller="LandingController as dc">
   <div ng-show="nav.displayLogout">
@@ -6,39 +10,45 @@
     </md-button>
   </div>
 </div>
-<h2>Update Sightings</h2>
-<div  ng-controller="UpdateController as uc" class="md-accent" ng-cloak ng-repeat="reportData in uc.sightInfo" layout-wrap>
-  <md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
-    <div flex-xs flex-gt-xs="50" layout="column">
-      <md-card>
-        <img ng-src="/assets/pics/ice-raid.png" class="md-card-image" alt="Washed Out">
-        <md-card-title>
-          <md-card-title-text>
-            <span class="md-headline">Sighting Description</span>
-          </md-card-title-text>
-        </md-card-title>
-        <md-card-content class="md-accent">
-          <h5 class="md-accent">
-            <md-icon md-svg-src="assets/pics/ic_message_48px.svg"></md-icon> {{reportData.description}}</h5>
+<h2 class="updateViewTitle"> <mark><strong>Update Sightings</strong></mark></h2>
 
-          <p class="md-accent">
-            <md-icon md-svg-src="assets/pics/ic_date_range_48px.svg"></md-icon> Date: {{reportData.date}}</p>
+<div class='md-padding' layout="row" layout-align="center" layout-wrap ng-controller="UpdateController as uc" ng-cloak >
+  <md-card style="width: 333px;" ng-repeat="reportData in uc.sightInfo">
+    <img src="/assets/pics/ice-raid.png" class="md-card-image">
+    <md-card-title>
+      <md-card-title-text>
+        <span class="md-headline">Sighting Description</span>
+      </md-card-title-text>
+    </md-card-title>
+    <md-card-content layout-wrap>
+      <p  >
+        <md-icon class="md-accent" md-svg-src="assets/pics/ic_message_48px.svg"></md-icon>
+        {{reportData.description}}
+      </p>
+      <p>
+        <md-icon class="md-accent" md-svg-src="assets/pics/ic_date_range_48px.svg"></md-icon>
+        Date: {{reportData.date}}
+      </p>
 
-          <p>
-            <md-icon md-svg-src="assets/pics/ic_access_time_48px.svg"></md-icon> Time: {{reportData.time}}</p>
+      <p>
+        <md-icon class="md-accent" md-svg-src="assets/pics/ic_access_time_48px.svg"></md-icon>
+        Time: {{reportData.time}}
+      </p>
 
-          <p>
-            <md-icon md-svg-src="assets/pics/noun_63811_cc.svg"></md-icon> Zipcode: {{reportData.location}}</p>
+      <p>
+        <md-icon class="md-accent" md-svg-src="assets/pics/noun_63811_cc.svg"></md-icon>
+        Zipcode: {{reportData.location}}
+      </p>
 
-          <p>{{reportData.image}}</p>
-        </md-card-content>
-        <md-card-actions layout="row" layout-align="end center">
-          <md-input-container class="md-block">
-            <md-switch class="md-primary" name="special" ng-model="project.special" required>
-              Verified
-            </md-switch>
-        </md-card-actions>
-      </md-card>
+      <p>{{reportData.image}}</p>
+    </md-card-content>
+    <div  class="md-actions" layout="row" layout-align="end center">
+      <md-button flex = "33-66" class="md-accent"> Delete </md-button>
+   
+      <md-switch  name="special" ng-model="project.special" required>
+        Verified
+      </md-switch>
     </div>
+  </md-card>
 </div>
 

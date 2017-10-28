@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
   <title>Watchale Solo Project</title>
   <!-- angular material requires Angular.js Libraries -->
@@ -18,7 +19,7 @@
   <script src="/scripts/controllers/reportController.js"></script>
   <script src="/scripts/controllers/sightingsController.js"></script>
   <script src="/scripts/controllers/updateController.js"></script>
- <!-- sweetalert2 -->
+  <!-- sweetalert2 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.all.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.11.0/sweetalert2.css">
   <!-- Style Sheets -->
@@ -31,13 +32,26 @@
   <!-- Angular Material Style Sheet -->
   <link rel="stylesheet" href="/vendors/angular-material.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
+  <!-- Angular Material Fonts: -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+  <!-- Watchale Title Font -->
+  <link href="https://fonts.googleapis.com/css?family=Londrina+Shadow" rel="stylesheet">
 
+
+
+
+
+
+
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Raleway:500');
+</style>
 <body ng-app="myApp">
   <!-- NavController is on every page -->
   <header>
 
-<ng-include src ="'views/nav.html'"></ng-include>
+    <ng-include src="'views/nav.html'"></ng-include>
 
   </header>
   <!-- Pull in views via ngRoutes here -->
@@ -47,6 +61,3 @@
 </body>
 
 </html>
-
-
-

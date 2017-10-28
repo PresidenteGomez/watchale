@@ -1,33 +1,43 @@
-<div class="ng-scope layout-row" layout="row" layout-align="end start" ng-controller="NavController as nav" ng-controller="LandingController as dc">
-    <div ng-hide="nav.displayLogout">
-        <md-button class="md-accent" class="signIn" href="#!/login" name="md-Login">
-            <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Sign In</md-button>
-    </div>
-</div>
-<div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
-    ng-controller="LandingController as dc">
-    <div ng-show="nav.displayLogout">
-        <md-button class="md-accent" href="#" name="md-signout" ng-click="nav.logout()">
-            <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi, {{nav.username}}! | Sign Out
-        </md-button>
-    </div>
-</div>
-<div class="ng-scope layout-column">
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:500');
+</style>
 
-    <div class="flex-33-">
-        <!-- <iframe class="youtube" width="auto" height="auto" src="https://www.youtube.com/embed/0lNJviuYUEQ?ecver=1" frameborder=""
-            allowfullscreen> </iframe> -->
-        <h1 class="title">Watchale</h1>
-    </div>
+<body class="landingView">
 
-    <div class="flex-33-66">
-        <p>
-            One of the biggest problems in Minneapolis and around the Country is the lack of a centralized system to protect our immigrant
-            communities from being separated and deported from their families. Immigration and Customs Enforcement (ICE)
-            agents lurk in our local communities and dismantle families from each other. These “ICE raids” are incredibly
-            disruptive to communities. The application’s goal is to encourage neighbors to report ICE sightings, so families
-            have the opportunity to stay together. Keeping our communities safe is the most important goal of this application.
-        </p>
+    <div class="ng-scope layout-row" layout="row" layout-align="end start" ng-controller="NavController as nav" ng-controller="LandingController as dc">
+        <div ng-hide="nav.displayLogout" ng-controller="LoginController as lc">
+            <md-button class="md-accent" class="signIn" href="/auth/google" name="md-Login">
+                <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Sign In</md-button>
+        </div>
     </div>
-
-</div>
+    <div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
+        ng-controller="LandingController as dc">
+        <div ng-show="nav.displayLogout">
+            <md-button class="md-accent" href="#" name="md-signout" ng-click="nav.logout()">
+                <md-icon md-svg-src="assets/pics/ic_face_48px.svg"></md-icon> Hi, {{nav.username}}! | Sign Out
+            </md-button>
+        </div>
+    </div>
+    <div>
+        <h1 class="watchaleTitle"> <mark> Watchale </mark> </h1>
+        
+        <div class='md-padding' layout="row" layout-align="center" layout-wrap>
+            <p style="width: 777px;" class="md-body-2"><strong>
+                One of the biggest problems in Minneapolis and around the Country is the lack of a centralized system to protect our immigrant
+                communities from being separated and deported from their families. Immigration and Customs Enforcement (ICE)
+                agents lurk in our local communities and dismantle families from each other. These “ICE raids” are incredibly
+                disruptive to communities. The application’s goal is to encourage neighbors to report ICE sightings, so families
+                have the opportunity to stay together. Keeping our communities safe is the most important goal of this application.
+        </strong></p>
+        </div>
+        <hr>
+        <h4 class="santaCecilia">
+           <mark><strong>La Santa Cecilia - "Ice El Hielo"</strong></mark>
+        </h4>
+        <div class='md-padding' layout="row" layout-align="center" layout-wrap>
+            <iframe class="youtube" width="560" height="315" src="https://www.youtube.com/embed/0lNJviuYUEQ?ecver=1" frameborder="0"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</body>

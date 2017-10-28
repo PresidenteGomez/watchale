@@ -1,3 +1,6 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Raleway:500');
+</style>
 <div ng-controller="ReportController as pc" layout="column" ng-cloak class="md-inline-form">
     <div class="ng-scope layout-row" layout="row" class="logout" layout-align="end start" ng-controller="NavController as nav"
         ng-controller="LandingController as dc">
@@ -7,13 +10,12 @@
             </md-button>
         </div>
     </div>
-    <h1 class="lead">Report a Sighting </h1>
-    <md-content layout-gt-sm="row" layout-padding>
-    </md-content>
+   
+    <h1 class="reportSight"> <mark><strong> Report a Sighting </strong></mark></h1>
 
-    <md-content layout-padding>
+    <md-content class="md-padding" layout="row" layout-align="center" layout-wrap flex>
         <div>
-            <form name="userForm">
+            <form class="userForm">
 
                 <md-input-container class="md-block">
                     <label>Description</label>
@@ -28,20 +30,20 @@
                 </div>
                 <div layout-gt-xs="row">
                     <md-input-container flex-gt-sm>
-                        <label>Time (Best educated guess):</label>
+                        <label>Time</label>
                         <input type="time-local" ng-model="pc.time" name="time" value="" rows="1">
                     </md-input-container>
                 </div>
 
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
-                        <label>Zip Code Closest To Where You Are:</label>
+                        <label>Closest Zip Code</label>
                         <input ng-model="pc.location">
                     </md-input-container>
                 </div>
 
                 <div>
-                    <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton">Add Sighting</md-button>
+                    <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton" class="md-accent" flex= "33-99">Add Sighting</md-button>
 
                 </div>
             </form>

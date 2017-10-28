@@ -1,34 +1,14 @@
 <body ng-controller="LoginController as lc" ng-cloak>
+  <div class='md-padding' layout="column" layout-align="center" layout-wrap>
+    <h1 class="signInView">Sign In Page</h1>
 
-  <h2>Login Page</h2>
-  <!-- Shown for users that are NOT logged in -->
-  <section ng-hide="auth.loggedIn">
-    <!-- I got this button image from Googles sign-in button brand guidelines page -->
-    <a href="/auth/google"> 
-    <img src="/assets/btn_google_signin_dark_normal_web.png" />
-    </a>
-  </section>
-  <!-- Shown for users that are logged in -->
-  <section ng-show="auth.loggedIn">
-    <p>
-      You are logged in!
-    </p>
-  </section>
+    <!-- Shown for users that are NOT logged in -->
+    <section ng-hide="auth.loggedIn" layout-align="center center">
+      <!-- I got this button image from Googles sign-in button brand guidelines page -->
+      <!-- <a  href="/auth/google">
+        <img src="/assets/btn_google_signin_dark_normal_web.png" />
+      </a> -->
 
-  <li ng-show="lc.displayLogout">
-    Hi {{lc.username}}! |
-    <a href="#!/" ng-click="lc.logout()">Logout</a>
-  </li>
-  </ul>
-  </nav>
-  <!-- Show a helpful message when needed -->
-  <section id="message" class="lc.message.type" ng-show="lc.message.text">
-    {{lc.message.text}}
-
-    
-  </section>
-
-
-</body>
-
-<!-- class="six columns" -->
+    </section>
+    <img src="/assets/pics/ice-raid.png" >
+  </div>
