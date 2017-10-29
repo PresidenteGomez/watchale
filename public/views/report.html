@@ -22,28 +22,34 @@
                     <textarea ng-model="pc.description" md-maxlength="150" rows="1" md-select-on-focus></textarea>
                 </md-input-container>
 
-                <div layout-gt-xs="row">
-                    <md-input-container>
-                        <label>Enter Date</label>
-                        <md-datepicker ng-model="pc.date" rows="1"></md-datepicker type="date" name="date">
+                <div layout-gt-sm="row">
+                    <md-input-container flex-gt-sm>
+                        <label>Date</label>
+                            <md-datepicker ng-model="pc.date" rows="1"></md-datepicker type="date" name="date">
                     </md-input-container>
                 </div>
-                <div layout-gt-xs="row">
+            
+                <div layout-gt-sm="row">
                     <md-input-container flex-gt-sm>
                         <label>Time</label>
-                        <input type="time-local" ng-model="pc.time" name="time" value="" rows="1">
+                        <input type="time" ng-model="pc.time" name="time" value="" rows="1">
                     </md-input-container>
                 </div>
 
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Closest Zip Code</label>
-                        <input ng-model="pc.location">
+                            <input name="postalCode" ng-model="pc.location" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                                <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                                <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
+                                </div>
                     </md-input-container>
                 </div>
 
                 <div>
-                    <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton" class="md-accent" flex= "33-99">Add Sighting</md-button>
+                    
+                    <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton" class="md-accent" flex >Add Sighting</md-button>
 
                 </div>
             </form>

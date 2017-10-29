@@ -26,6 +26,13 @@ mark{
     text-shadow:1px 2px rgb(236, 64, 122);
     
 }
+.not1more{
+    text-align: center;
+    font-size: 100px;
+    color: rgb(101, 193, 216);
+    font-family: 'Londrina Shadow', cursive;
+    text-shadow:1px 2px rgb(236, 64, 122); 
+}
 .updateViewTitle{
     text-align: center;
     font-size: 100px;

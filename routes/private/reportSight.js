@@ -42,6 +42,18 @@ router.post('/', function (req, res) {
     });
 });
 
+//router.delete goes here:
+router.delete('/:id', function(req, res){
+    Reporting.remove({ _id: req.params.id }, function (err) {
+        if (!err) {
+            message.type = 'notification!';
+        }
+        else {
+            message.type = 'error';
+        }
+    });
+})
+
 //export router 
 module.exports = router;
 

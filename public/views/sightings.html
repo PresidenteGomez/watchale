@@ -14,11 +14,11 @@
     <h1 class="sightingsViewTitle"> <mark><Strong>Sightings</Strong> </mark> </h1>
 </div>
 <div class='md-padding' layout="row" layout-align="center" layout-wrap>
-    <md-card style="width: 333px;" ng-repeat="reportData in sc.sightInfo">
+    <md-card style="width: 333px;" ng-repeat="reportData in sc.sightInfo | orderBy : 'date' : 'reverse'">
         <img src="/assets/pics/ice-raid.png" class="md-card-image">
         <md-card-title>
             <md-card-title-text>
-                <span class="md-headline">Sighting Description</span>
+                <span class="md-headline">Description</span>
             </md-card-title-text>
         </md-card-title>
             <md-card-content layout-wrap>
@@ -28,17 +28,17 @@
                 </p>
                 <p>
                     <md-icon class="md-accent" md-svg-src="assets/pics/ic_date_range_48px.svg"></md-icon> 
-                    Date: {{reportData.date}}
+                  {{reportData.date | date}}
                 </p>
 
                 <p>
                     <md-icon class="md-accent" md-svg-src="assets/pics/ic_access_time_48px.svg"></md-icon> 
-                    Time: {{reportData.time}}
+                    {{reportData.time | date: 'h:mm a'}}
                 </p>
 
                 <p>
                     <md-icon class="md-accent" md-svg-src="assets/pics/noun_63811_cc.svg"></md-icon> 
-                    Zipcode: {{reportData.location}}
+                    {{reportData.location}}
                 </p>
 
                 <p>{{reportData.image}}</p>

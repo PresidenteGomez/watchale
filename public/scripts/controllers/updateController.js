@@ -4,4 +4,6 @@ myApp.controller('UpdateController', function (AppService) {
     
     AppService.getSights();
     vm.sightInfo = AppService.sightingsObject.data;
+
+    
 });
