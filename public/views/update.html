@@ -40,7 +40,7 @@
         {{reportData.location}}
       </p>
 
-      <p>{{reportData.image}}</p>
+      <p><md-icon class="md-accent" md-svg-src="assets/pics/ic_verified_user_48px.svg"></md-icon> Verified: {{reportData.confirmed}}</p>
     </md-card-content>
     <div  class="md-actions" layout="row" layout-align="end center">
       <md-button flex = "33-66" class="md-accent" ng-click="uc.delete(reportData._id)" > Delete </md-button>
