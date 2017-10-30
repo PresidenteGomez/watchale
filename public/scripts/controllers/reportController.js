@@ -12,13 +12,15 @@ myApp.controller('ReportController', function (AppService) {
             date: vm.date,
             time: vm.time,
             location: vm.location,
-            image: vm.image
+            image: vm.image,
+            confirmed: false
         };
         console.log('addReport object from DOM ->', addSightingsObject);
         //this will add data to watchale database using the AppService
         AppService.postReport(addSightingsObject);
     };
 
+ 
     // vm.imageFile = AppService.fileStack;
 
     // AppService.openPicker();

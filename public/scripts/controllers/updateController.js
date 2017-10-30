@@ -7,9 +7,15 @@ myApp.controller('UpdateController', function (AppService) {
     vm.sightInfo = AppService.sightingsObject.data;
 
 
-    vm.confirmed = function () {
-        AppService.confirmed();
+    vm.confirmed = function (confId) {
+        AppService.confirmed(confId);
         console.log('in confirmed function');
     }
 
+    vm.delete = function (confId) {
+        AppService.delete(confId);
+
+        console.log('in delete function');
+    }
+    
 });

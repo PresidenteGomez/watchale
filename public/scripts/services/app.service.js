@@ -48,13 +48,19 @@ myApp.service('AppService', function ($http) {
         })
     }
 
-    // sv.confirmed = function () {
-    //     $http.put('/private/reportSight').then(function (response) {
-    //         sv.sightingsObject.data = response.data;
-    //     console.log('in sv.confirmed');
-    // })
-    // }
+    sv.confirmed = function (confirmedId) {
+        $http.put('/private/reportSight/' + confirmedId).then(function (response) {
+            
+        console.log('in sv.confirmed');
+    })
+    }
 
+    sv.delete = function (confirmedId) {
+        $http.delete('/private/reportSight/' + confirmedId).then(function (response) {
+
+            console.log('in sv.confirmed');
+        })
+    }
 
 
 

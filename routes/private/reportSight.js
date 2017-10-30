@@ -29,7 +29,7 @@ router.post('/', function (req, res) {
     var userConnect = req.body;
     userConnect.addedBy = req.user.googleName;
     var newSighting = new Reporting(userConnect);
-    
+
     newSighting.save(function (err) {
         console.log('here');
         if (err) {
@@ -43,25 +43,32 @@ router.post('/', function (req, res) {
 });
 
 //router.delete goes here:
-router.delete('/:id', function(req, res){
+router.delete('/:id', function (req, res) {
     Reporting.remove({ _id: req.params.id }, function (err) {
-        if (!err) {
-            message.type = 'verified!';
-        }
-        else {
-            message.type = 'error';
+        if (err) {
+            console.error('ERROR!!');
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
         }
     });
-})
+});
 
-//this route is to eventually "update" a sighting to either display "verified" in the "All Sightings" page.----NEEDS MongoDB query that could be: db.reportings.update({_id: 'ObjectId("59f10de59b8eeb2a000b9dce")'},{confirmed: true}); 
-router.put('/', function (req, res) {
-    Reporting.update({}, function (err, response) {
-        res.sendStatus(201);
-    })
-    console.log('in router.put(/) in reportSight Route');
-})
 
+//this route is to eventually "update" a sighting to either display "verified" in the "All Sightings" page.----NEEDS MongoDB query that could be: db.reportings.updateOne({"_id": ObjectId("59f73210ae5e9840ae8042e6")}, {$set: {"confirmed": true}});
+router.put('/:id', function (req, res) {
+    console.log('in /confirmed PUT', req.params.id);
+    Reporting.updateOne({ "_id": req.params.id }, { $set: { "confirmed": true } }, function (err) {
+
+        if (err) {
+            console.error('ERROR!!');
+            res.sendStatus(500);
+        } else {
+            res.sendStatus(201);
+        }
+    });
+
+});
 
 //export router 
 module.exports = router;

@@ -43,12 +43,8 @@
       <p>{{reportData.image}}</p>
     </md-card-content>
     <div  class="md-actions" layout="row" layout-align="end center">
-      <md-button flex = "33-66" class="md-accent"> Delete </md-button>
-   
-      <md-switch  name="special" ng-model="project.special" ng-change="uc.confirmed()" required>
-        Verified
-      </md-switch>
+      <md-button flex = "33-66" class="md-accent" ng-click="uc.delete(reportData._id)" > Delete </md-button>
+      <md-button flex = "33-66" class="md-accent" ng-click="uc.confirmed(reportData._id)"> Verified </md-button>
     </div>
   </md-card>
 </div>
-
