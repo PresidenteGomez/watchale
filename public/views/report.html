@@ -10,8 +10,12 @@
             </md-button>
         </div>
     </div>
-   
-    <h1 class="reportSight"> <mark><strong> Report a Sighting </strong></mark></h1>
+
+    <h1 class="reportSight">
+        <mark>
+            <strong> Report a Sighting </strong>
+        </mark>
+    </h1>
 
     <md-content class="md-padding" layout="row" layout-align="center" layout-wrap flex>
         <div>
@@ -25,10 +29,10 @@
                 <div layout-gt-sm="row">
                     <md-input-container flex-gt-sm>
                         <label>Date</label>
-                            <md-datepicker ng-model="pc.date" rows="1"></md-datepicker type="date" name="date">
+                        <md-datepicker ng-model="pc.date" rows="1"></md-datepicker type="date" name="date">
                     </md-input-container>
                 </div>
-            
+
                 <div layout-gt-sm="row">
                     <md-input-container flex-gt-sm>
                         <label>Time</label>
@@ -39,21 +43,28 @@
                 <div layout-gt-sm="row">
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Closest Zip Code</label>
-                            <input name="postalCode" ng-model="pc.location" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-                            <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
-                                <div ng-message="required" class="my-message">You must supply a postal code.</div>
-                                <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
-                                </div>
+                        <input name="postalCode" ng-model="pc.location" required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
+                        <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                            <div ng-message="required" class="my-message">You must supply a postal code.</div>
+                            <div ng-message="pattern" class="my-message">That doesn't look like a valid postal code.
+                            </div>
                     </md-input-container>
-                </div>
+                    </div>
 
-                <div>
-                    
-                    <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton" class="md-accent" flex >Add Sighting</md-button>
+                    <!-- filestack test -->
+                    <!-- <div>
+                        <input type="BUTTON" value="Pick Image" id="fsClient" onclick="openPicker()">
+                    </div> -->
+                    <!-- <div>
+                        <input type="file" ng-model="pc.image">
+                    </div> -->
+                    <div>
 
-                </div>
+                        <md-button href="/#!/sightings" ng-click="pc.addReport()" type="submit" name="submitButton" class="md-accent" flex>Add Sighting</md-button>
+
+                    </div>
             </form>
-        </div>
+            </div>
     </md-content>
 
-</div>
+    </div>

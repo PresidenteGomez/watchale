@@ -46,13 +46,22 @@ router.post('/', function (req, res) {
 router.delete('/:id', function(req, res){
     Reporting.remove({ _id: req.params.id }, function (err) {
         if (!err) {
-            message.type = 'notification!';
+            message.type = 'verified!';
         }
         else {
             message.type = 'error';
         }
     });
 })
+
+//this route is to eventually "update" a sighting to either display "verified" in the "All Sightings" page.----NEEDS MongoDB query that could be: db.reportings.update({_id: 'ObjectId("59f10de59b8eeb2a000b9dce")'},{confirmed: true}); 
+router.put('/', function (req, res) {
+    Reporting.update({}, function (err, response) {
+        res.sendStatus(201);
+    })
+    console.log('in router.put(/) in reportSight Route');
+})
+
 
 //export router 
 module.exports = router;

@@ -15,7 +15,7 @@ var reportingSchema = new Schema({
         default: Date.now
     },
     location: Number,
-    image: String, 
+    // image: { type: Mixed, required: true },
     addedBy: String,//need to update this into accepting images
     confirmed: Boolean
 });

@@ -45,7 +45,7 @@
     <div  class="md-actions" layout="row" layout-align="end center">
       <md-button flex = "33-66" class="md-accent"> Delete </md-button>
    
-      <md-switch  name="special" ng-model="project.special" required>
+      <md-switch  name="special" ng-model="project.special" ng-change="uc.confirmed()" required>
         Verified
       </md-switch>
     </div>

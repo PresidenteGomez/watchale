@@ -4,6 +4,7 @@ myApp.service('AppService', function ($http) {
     sv.sightingsObject = { data: [] };
     sv.adminObject = { admin: false };
     sv.userObject = [];
+    //sv.fileStackObject = { filesUploaded: [] };
     console.log('in AppService');
 
     //function to add a sighting to the database
@@ -46,4 +47,16 @@ myApp.service('AppService', function ($http) {
 
         })
     }
+
+    // sv.confirmed = function () {
+    //     $http.put('/private/reportSight').then(function (response) {
+    //         sv.sightingsObject.data = response.data;
+    //     console.log('in sv.confirmed');
+    // })
+    // }
+
+
+
+
+
 }); //end myApp.service

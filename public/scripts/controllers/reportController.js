@@ -18,6 +18,21 @@ myApp.controller('ReportController', function (AppService) {
         //this will add data to watchale database using the AppService
         AppService.postReport(addSightingsObject);
     };
+
+    // vm.imageFile = AppService.fileStack;
+
+    // AppService.openPicker();
+//     var fsClient = filestack.init('AX7xp5ytvS9GM2CfyuWGwz');
+//     // var fileHandle = '';
+//    function openPicker() {
+//         console.log('openPicker() ->', openPicker);
+//         fsClient.pick({
+//             fromSources: ["local_file_system", "imagesearch", "facebook", "instagram"]
+//         }).then(function (response) {
+//             // declare this function to handle response
+//             handleFilestack(response);
+//         });
+//     }
     
     AppService.getSights();
 });
